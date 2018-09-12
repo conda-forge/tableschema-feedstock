@@ -1,4 +1,4 @@
-{% set version = "1.1.0" %}
+{% set version = "1.2.1" %}
 
 package:
   name: tableschema
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/tableschema/tableschema-{{ version }}.tar.gz
-  sha256: 4b68da205780b76b2856470bf3603b7ace97bc7b0ed02337429d78c9bb448b13
+  sha256: 93cdfe69953e7e435a0a831f390c27611fe6e0e204f196b6254dc9f9e8093e60
 
 build:
   number: 0
