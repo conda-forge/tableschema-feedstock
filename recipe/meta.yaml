@@ -37,11 +37,13 @@ test:
     - tableschema.constraints
     - tableschema.plugins
     - tableschema.types
-  commands:
-    - tableschema --help
   requires:
     - pylama
     - tox
+    - pip
+  commands:
+    - pip check
+    - tableschema --help
 
 about:
   home: https://github.com/frictionlessdata/tableschema-py
