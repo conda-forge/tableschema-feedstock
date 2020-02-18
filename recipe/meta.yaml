@@ -1,4 +1,4 @@
-{% set version = "1.12.5" %}
+{% set version = "1.13.0" %}
 
 package:
   name: tableschema
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/tableschema/tableschema-{{ version }}.tar.gz
-  sha256: 10b801016d9b8f39a36c827e423d073cd52a5f033f939c974ac80e0c0d05c81e
+  sha256: 92d4e34a724d0dbc3c026082231e03ea19fb722f43bebcfe1fcefee5fea3ff67
 
 build:
   number: 0
@@ -37,11 +37,13 @@ test:
     - tableschema.constraints
     - tableschema.plugins
     - tableschema.types
-  commands:
-    - tableschema --help
   requires:
     - pylama
     - tox
+    - pip
+  commands:
+    - pip check
+    - tableschema --help
 
 about:
   home: https://github.com/frictionlessdata/tableschema-py
