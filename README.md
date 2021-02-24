@@ -5,11 +5,9 @@ Home: https://github.com/frictionlessdata/tableschema-py
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/tableschema-feedstock/blob/master/LICENSE.txt)
 
 Summary: A utility library for working with Table Schema in Python
-
-
 
 Current build status
 ====================
