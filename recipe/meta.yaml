@@ -1,37 +1,37 @@
-{% set version = "1.20.2" %}
+{% set name = "tableschema" %}
+{% set version = "1.20.4" %}
 
 package:
-  name: tableschema
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/t/tableschema/tableschema-{{ version }}.tar.gz
-  sha256: cfa3b0aa1c0941002384c6288794f9488cb5ea9188cf84ac700d17758cb036e7
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tableschema-{{ version }}.tar.gz
+  sha256: e469d5d43ab59c8f4ac91fe796fd0630cb81ce54df400d9de8ee3be03ecfe497
 
 build:
-  number: 0
-  noarch: python
   entry_points:
     - tableschema = tableschema.__main__:cli
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
-    - python
+    - python >=3.7
     - pip
   run:
-    - python
-    - cached-property >=1.5
-    - click >=3.3
-    - isodate >=0.5.4
-    - jsonschema >=2.5
-    - pyrsistent <0.17
-    - python-dateutil >=2.4
-    - requests >=2.5
-    - rfc3986 >=1.1.0
+    - python >=3.7
     - six >=1.9
-    - tabulator >=1.51.3
+    - click >=3.3
+    - requests >=2.5
+    - cached-property >=1.5
+    - python-dateutil >=2.4
+    - jsonschema >=2.5
     - unicodecsv >=0.14
+    - isodate >=0.5.4
+    - rfc3986 >=1.1.0
+    - tabulator >=1.51.3
 
 test:
   imports:
