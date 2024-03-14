@@ -1,5 +1,5 @@
 {% set name = "tableschema" %}
-{% set version = "1.20.7" %}
+{% set version = "1.20.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tableschema-{{ version }}.tar.gz
-  sha256: 95de2816058b330a97fbde81fd4f4a5acf937b82dc30264b25854ec4740f0baf
+  sha256: 765c3d90decfe9d19bad567cf76f0681badee95690f2ef7dd6320749f2eeffbb
 
 build:
   entry_points:
@@ -21,6 +21,7 @@ requirements:
     - python >=3.7
     - pip
   run:
+    - dataflows-tabulator >=1.54.1
     - python >=3.7
     - six >=1.9
     - click >=3.3
