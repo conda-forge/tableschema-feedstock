@@ -1,3 +1,4 @@
+{% set python_min = "3.7" %}
 {% set name = "tableschema" %}
 {% set version = "1.21.0" %}
 
@@ -18,11 +19,12 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
     - dataflows-tabulator >=1.54.1
-    - python >=3.7
+    - python >={{ python_min }}
     - six >=1.9
     - click >=3.3
     - requests >=2.5
@@ -41,6 +43,7 @@ test:
     - tableschema.plugins
     - tableschema.types
   requires:
+    - python {{ python_min }}
     - pylama
     - tox
     - pip
